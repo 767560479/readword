@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--适配手机-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Title</title>
+
+
+</head>
+<body>
+
+<div style="width:100%;height: 500px" id="editor"></div>
+<button style="padding: 5px" onclick="testButton()" type="button" value="富文本内容"></button>
+<script type="text/javascript" src="/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="wangEditor.js"></script>
+<script type="text/javascript">
+    var editor;
+    $(function () {
+        var E = window.wangEditor;
+         editor = new E('#editor');
+        //   var editor = new E( document.getElementById('editor') )
+        editor.create();
+
+        var name = '张三';
+        var sex = '先生';
+        var myDate = new Date();
+
+
+        //editor.txt.html("<p>尊敬的【张三】【先生】：</p><p style=\"text-indent: 2em\">您好，经综合评估，您初步符合我公司【应聘岗位】岗位要求，现诚邀您参加面试。</p><p style=\"text-indent: 2em\">时间：【时间】，地点：【地点】。</p><p style=\"text-indent: 2em\">      期待您的到来。</p><p style=\"text-align: right\">  广西玉柴机器股份有限公司人力资源部</p><p style=\"text-align: right\"> 【2019/10/9 下午4:11:34】</p>")
+        // editor.txt.html('<p>尊敬的【'+name+'】【'+sex+'】：</p>')
+        // editor.txt.append('<p style="text-indent: 2em">您好，经综合评估，您初步符合我公司【应聘岗位】岗位要求，现诚邀您参加面试。</p>')
+        // editor.txt.append('<p  style="text-indent: 2em">时间：【时间】，地点：【地点】。</p>')
+        // editor.txt.append('<p  style="text-indent: 2em">      期待您的到来。</p>')
+        // editor.txt.append('<p style="text-align: right">  广西玉柴机器股份有限公司人力资源部</p>')
+        // editor.txt.append('<p style="text-align: right"> 【'+ myDate.toLocaleString( )+'】</p>')
+        editor.txt.html("<p>尊敬的<u>xxx</u>：</p><p>&nbsp; &nbsp; ss<u>ssssss</u>ssssssssd&nbsp;<span style=\"text-decoration-line: underline;\"></span><span style=\"text-decoration-line: underline;\">试试替换下划线</span></p><p style=\"text-align: right;\">&nbsp; &nbsp; 人力资源部</p><p style=\"text-align: right;\">系统时间</p>")
+    });
+
+    testButton = function () {
+        var text = editor.txt.html();
+        var text1 = editor.txt.text();
+        console.log('editor.text.html(): ' +text);
+        console.log('editor.txt.text():' + text1)
+    }
+</script>
+
+</body>
+</html>

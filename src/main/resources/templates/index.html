@@ -1,0 +1,49 @@
+<head>
+<title>阿里云OSS上传入口</title>
+    <style type="text/css">
+        body {
+            background-color:lightgrey;
+        }
+        #all{
+            position: relative;
+            padding:10%;
+        }
+        #attach {
+            text-align: center;
+            width: 600px;
+            height: 300px;
+            /*background-color:lightsteelblue;*/
+            margin-left: auto;
+            margin-right: auto;
+        }
+        #form-attach {
+            padding-top: 26%;
+            height: 300px;
+        }
+        .file-btn{
+             background-color: #e7e7e7;
+             font-size: 23px;
+         }
+    </style>
+
+</head>
+<body>
+<div id="all">
+    <div id="attach">                                 
+        <form id="form-attach" action="http://localhost:8088/upload" method="post" enctype="multipart/form-data">
+            <div>
+                <select name="type" style="width: 80%">
+                   <option value="1">广西人才网</option>
+                    <option value="2">智联招聘</option>
+                    <option value="3">51job</option>
+                    <option value="4">猎聘网</option>
+                    <option value="5">智联卓聘</option>
+                </select>
+            </div>
+            <p>选择文件大小需控制在20M以内</p>
+            <input class="file-btn" type="file" name="file" multiple="multiple"/> 
+            <input class="file-btn" type="submit" value="上传文件"/>
+        </form>
+    </div>
+</div>
+</body>
